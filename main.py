@@ -22,7 +22,12 @@ class Produto:
 
         return produtosFiltrados
     
-
+    def ordenar(self, atributo: str):
+        return sorted(self.produtos, key=lambda produto: produto[atributo])
+    
 produto = Produto()
 print(produto.removerRepetido("nome"))   # deixa todos os itens por terem nomes diferentes
 print(produto.removerRepetido("preco"))  # remove preco por ter o mesmo valor
+print(produto.removerRepetido("preco"))  # remove preco por ter o mesmo valor
+
+print(produto.ordenar("preco")) 
