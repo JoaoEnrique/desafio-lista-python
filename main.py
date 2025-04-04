@@ -8,9 +8,14 @@ class Produto:
             {
                 "nome": "Queijo",
                 "preco": 5,
+            },
+	    {
+                "nome": "Abacate",
+                "preco": 2,
             }
         ]
 
+    # passa como parametro o atributo que sera comparado para remover repetidos
     def removerRepetido(self, atributo: str):
         valoresPesquisados = []
         produtosFiltrados = []
@@ -22,12 +27,24 @@ class Produto:
 
         return produtosFiltrados
     
+    # passa como parametro o atributo que sera comparado para ordenar
     def ordenar(self, atributo: str):
         return sorted(self.produtos, key=lambda produto: produto[atributo])
     
 produto = Produto()
+print("##REMOVER ITENS REPETIDOS PELO ATRIBUTO")
+print("Remove nomes repetidos")
 print(produto.removerRepetido("nome"))   # deixa todos os itens por terem nomes diferentes
-print(produto.removerRepetido("preco"))  # remove preco por ter o mesmo valor
+
+
+print("\nRemove nomes repetidos")
 print(produto.removerRepetido("preco"))  # remove preco por ter o mesmo valor
 
-print(produto.ordenar("preco")) 
+#ordenar itens
+print("\n\n##ORDENAR")
+print("Ordenar por nome")
+print(produto.ordenar("nome"))  # ordena por nome
+
+
+print("\nOrdenar por menor preco")
+print(produto.ordenar("preco")) # ordena por preco 
